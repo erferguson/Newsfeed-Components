@@ -111,13 +111,18 @@ function articleCreator(title, date, firstPara, secondPara, thirdPara){
   articleDate.classList.add('date')
   articleButton.classList.add('expandButton')
 
+ // --- unicode for Symbols
+ const open = '🦈';
+ const close = '🦅';
+
   // --- .textContent -- 
   articleTitle.textContent = title;
   articleDate.textContent = date;
   articleParagraph1.textContent = firstPara;
   articleParagraph2.textContent = secondPara;
   articleParagraph3.textContent = thirdPara;
-  articleButton.textContent = 'Read On...';
+  articleButton.textContent = open;
+  articleButton.textContent = close;
 
   // --- .addEventListener
   articleButton.addEventListener('click', (e) =>{

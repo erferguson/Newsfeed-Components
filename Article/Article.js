@@ -95,7 +95,7 @@ data.map(cb => {
   ))
 });
 
-function articleCreator(title, date, firstParagraph, secondParagraph, thirdParagraph){
+function articleCreator(title, date, firstPara, secondPara, thirdPara){
 
   // --- .createElement
   const article = document.createElement('div');
@@ -114,9 +114,10 @@ function articleCreator(title, date, firstParagraph, secondParagraph, thirdParag
   // --- .textContent -- 
   articleTitle.textContent = title;
   articleDate.textContent = date;
-  articleParagraph1.textContent = firstParagraph;
-  articleParagraph2.textContent = secondParagraph;
-  articleParagraph3.textContent = thirdParagraph;
+  articleParagraph1.textContent = firstPara;
+  articleParagraph2.textContent = secondPara;
+  articleParagraph3.textContent = thirdPara;
+  articleButton.textContent = 'Read On...';
 
   // --- .addEventListener
   articleButton.addEventListener('click', (e) =>{

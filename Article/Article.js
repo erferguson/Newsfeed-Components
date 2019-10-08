@@ -88,6 +88,38 @@ const data = [
   }
 ];
 
+function articleCreator(){
+
+  // --- .createElement
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p')
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const button = document.createElement('button');
+
+  // --- .classList --
+  article.classList.add('article');
+  date.classList.add('date')
+  button.classList.add('expandButton')
+
+  // --- .textContent -- 
+  title.textContent = title;
+  date.textContent = date;
+  paragraph1.textContent = firstParagraph;
+  paragraph2.textContent = secondParagraph;
+  paragraph3.textContent = thirdParagraph;
+
+  // --- .addEventListener
+  button.addEventListener('click', (e) =>{
+    article.classList.toggle('article-open');
+  })
+
+  return article;
+}
+
+
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">

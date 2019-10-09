@@ -104,16 +104,17 @@ function articleCreator(title, date, firstPara, secondPara, thirdPara){
   const articleParagraph1 = document.createElement('p');
   const articleParagraph2 = document.createElement('p');
   const articleParagraph3 = document.createElement('p');
-  const articleButton = document.createElement('span');
+
+  const buttonPanel = document.createElement('span');
 
   // --- .classList --
   article.classList.add('article');
   articleDate.classList.add('date')
-  articleButton.classList.add('expandButton')
+
+  buttonPanel.classList.add('expandButton')
 
  // --- unicode for Symbols
- const open = '🦈';
- const close = '🦅';
+ const action = '🦅';
 
   // --- .textContent -- 
   articleTitle.textContent = title;
@@ -121,11 +122,12 @@ function articleCreator(title, date, firstPara, secondPara, thirdPara){
   articleParagraph1.textContent = firstPara;
   articleParagraph2.textContent = secondPara;
   articleParagraph3.textContent = thirdPara;
-  articleButton.textContent = open;
-  articleButton.textContent = close;
+
+  // buttonPanel.textContent = open;
+  buttonPanel.textContent = action;
 
   // --- .addEventListener
-  articleButton.addEventListener('click', (e) =>{
+  buttonPanel.addEventListener('click', (e) =>{
     article.classList.toggle('article-open');
   })
 
@@ -135,14 +137,14 @@ function articleCreator(title, date, firstPara, secondPara, thirdPara){
   article.appendChild(articleParagraph1);
   article.appendChild(articleParagraph2);
   article.appendChild(articleParagraph3);
-  article.appendChild(articleButton);
+
+  article.appendChild(buttonPanel);
 
   return article;
 }
 
 container.appendChild(articleCreator(
-  'Heyo, River!', 'Sep 29 2019', '"Four score and seven years ago our fathers brought forth on this continent',
-  ', a new nation, conceived in Liberty,', 'and dedicated to the proposition that all men are created equal.'
+  'Heyo, River!', 'Sep 29 2019', '"Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.'
 ))
 
 

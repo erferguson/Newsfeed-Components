@@ -87,6 +87,68 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+const container = document.querySelector('.articles');
+
+data.map(cb => {
+  container.appendChild(articleCreator(
+    cb.title, cb.date, cb.firstParagraph, cb.secondParagraph, cb.thirdParagraph
+  ))
+});
+
+function articleCreator(title, date, firstPara, secondPara, thirdPara){
+
+  // --- .createElement
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p')
+  const articleParagraph1 = document.createElement('p');
+  const articleParagraph2 = document.createElement('p');
+  const articleParagraph3 = document.createElement('p');
+
+  const buttonPanel = document.createElement('span');
+
+  // --- .classList --
+  article.classList.add('article');
+  articleDate.classList.add('date')
+
+  buttonPanel.classList.add('expandButton')
+
+ // --- unicode for Symbols
+ const action = '🦅';
+
+  // --- .textContent -- 
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleParagraph1.textContent = firstPara;
+  articleParagraph2.textContent = secondPara;
+  articleParagraph3.textContent = thirdPara;
+
+  // buttonPanel.textContent = open;
+  buttonPanel.textContent = action;
+
+  // --- .addEventListener
+  buttonPanel.addEventListener('click', (e) =>{
+    article.classList.toggle('article-open');
+  })
+
+  // --- .appendChild -- 
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleParagraph1);
+  article.appendChild(articleParagraph2);
+  article.appendChild(articleParagraph3);
+
+  article.appendChild(buttonPanel);
+
+  return article;
+}
+
+container.appendChild(articleCreator(
+  'Heyo, River!', 'Sep 29 2019', '"Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.'
+))
+
+
+
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
